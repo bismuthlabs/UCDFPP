@@ -95,7 +95,7 @@ export default function Home() {
           <Voting />          
           {/* Form Form Form Form */}
           <div className='my-20'>
-            <div className='max-w-3xl'>
+            <div>
               <p>
                 Have you encountered a situation where you made a clothing or shoe purchase and later felt dissatisfied with your decision? We welcome you to share your personal experiences or insights into the reasons why people face such situations.
               </p>
