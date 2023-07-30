@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import Voting from '../components/voting';
 
 export default function Home() {
 
@@ -60,78 +61,38 @@ export default function Home() {
         <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
           <h1 className='text-xl uppercase mb-4 font-bold'>Unlocking Shopping Secrets: Why Didn't You Love Your Recent Fashion Purchase?.</h1>
         </div>
-        <p>Please upvote or downvote each of the three reasons below</p>
+        <p>
+          Please upvote 
+          <span>
+            <svg
+              className='inline text-orange-500'
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill={'none'}
+              stroke={'currentColor'}
+            >
+              <path fill="currentColor" d="M12.781 2.375c-.381-.475-1.181-.475-1.562 0l-8 10A1.001 1.001 0 0 0 4 14h4v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7h4a1.001 1.001 0 0 0 .781-1.625l-8-10zM15 12h-1v8h-4v-8H6.081L12 4.601L17.919 12H15z"/></svg>  
+          </span> 
+           or downvote
+           <span>
+            <svg
+              className='inline text-blue-500'
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill={'none'}
+              stroke={'currentColor'}
+            >
+              <path fill="currentColor" d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399L6.081 12H10V4h4v8h3.919L12 19.399z"/></svg>
+           </span>
+            each of the three reasons below
+        </p>
 
         <div className="mb-24 grid lg:mb-0 lg:text-left">
-          {/* 11111111111111111111111111111 */}
-          <div className='flex items-center'>
-            <p className='text-4xl'>1</p>
-            <div
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            >
-              <h2 className={`mb-3 text-base font-semibold`}>
-                Shop owners are very intimidating{' '}
-              </h2>
-              <p className={`m-0 max-w-[60ch] text-sm text-gray-600`}>
-                They force you to buy what they think is good for you and do not allow you to fully explore the products.
-              </p>
-            </div>
-            <div className='flex flex-col items-center'>
-              <button>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12.781 2.375c-.381-.475-1.181-.475-1.562 0l-8 10A1.001 1.001 0 0 0 4 14h4v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7h4a1.001 1.001 0 0 0 .781-1.625l-8-10zM15 12h-1v8h-4v-8H6.081L12 4.601L17.919 12H15z"/></svg>
-              </button>
-              <p className='text-sm'>34</p>
-              <button>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399L6.081 12H10V4h4v8h3.919L12 19.399z"/></svg>
-              </button>
-            </div>
-          </div>
-          {/* 2222222222222222222222222222222 */}
-          <div className='flex items-center'>
-            <p className='text-4xl'>2</p>
-            <div
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            >
-              <h2 className={`mb-3 text-base font-semibold`}>
-                Limited access to exceptional products{' '}
-              </h2>
-              <p className={`m-0 max-w-[60ch] text-sm text-gray-600`}>
-                Sometimes, what you're looking for, cannot be found in the few boutiques you know. So you end up buying any other product, which you'll probably not like.
-              </p>
-            </div>
-            <div className='flex flex-col items-center'>
-              <button>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12.781 2.375c-.381-.475-1.181-.475-1.562 0l-8 10A1.001 1.001 0 0 0 4 14h4v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7h4a1.001 1.001 0 0 0 .781-1.625l-8-10zM15 12h-1v8h-4v-8H6.081L12 4.601L17.919 12H15z"/></svg>
-              </button>
-              <p className='text-sm'>67</p>
-              <button>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399L6.081 12H10V4h4v8h3.919L12 19.399z"/></svg>
-              </button>
-            </div>
-          </div>
-          {/* 33333333333333333333333333333 */}
-          <div className='flex items-center'>
-            <p className='text-4xl'>3</p>
-            <div
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            >
-              <h2 className={`mb-3 text-base font-semibold`}>
-                The item you like was too expensive for you{' '}
-              </h2>
-              <p className={`m-0 max-w-[60ch] text-sm text-gray-600`}>
-                When you cannot afford to buy the one you really like, you have no choice but to buy any other item especially when you need it urgently for an occasion.
-              </p>
-            </div>
-            <div className='flex flex-col items-center'>
-              <button>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12.781 2.375c-.381-.475-1.181-.475-1.562 0l-8 10A1.001 1.001 0 0 0 4 14h4v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7h4a1.001 1.001 0 0 0 .781-1.625l-8-10zM15 12h-1v8h-4v-8H6.081L12 4.601L17.919 12H15z"/></svg>
-              </button>
-              <p className='text-sm'>39</p>
-              <button>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399L6.081 12H10V4h4v8h3.919L12 19.399z"/></svg>
-              </button>
-            </div>
-          </div>
+          <Voting />          
           {/* Form Form Form Form */}
           <div className='my-20'>
             <div>
