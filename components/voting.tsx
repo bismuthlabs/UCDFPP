@@ -20,6 +20,7 @@ interface Reason {
 
 export default function Voting() {
   const [reasons, setReasons] = useState<Reason[]>([]);
+  const [loading, setLoading] = useState(true); // Add the loading state
 
   useEffect(() => {
     // Function to fetch dissatisfaction data from Firestore
@@ -41,8 +42,10 @@ export default function Voting() {
         }));
 
         setReasons(rankedReasons);
+        setLoading(false); // Set loading to false after data is fetched
       } catch (error) {
         console.error('Error fetching dissatisfaction data:', error);
+        setLoading(false); // Set loading to false in case of an error
       }
     };
 
@@ -187,7 +190,13 @@ export default function Voting() {
 
   return (
     <>
-      {reasons.map((reason) => (
+     {loading ? ( // Display loading UI while data is being fetched
+        <div className="text-center mt-4">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500 mx-auto"></div>
+          <p className="mt-2">Fetching data...</p>
+        </div>
+      ) : (
+        reasons.map((reason) => (
         <div className="flex items-center" key={reason.id}>
           <p className='text-4xl'>
             {/* {reason.id} */}
@@ -244,27 +253,8 @@ export default function Voting() {
             </div>
           </div>
         </div>
-      ))}
+        ))
+      )}
     </>
   );
 }
-
-
-// useEffect(() => {
-//   // Function to fetch dissatisfaction data from Firestore
-//   const fetchDissatisfactionData = async () => {
-//     try {
-//       const dissatisfactionSnapshot = await getDocs(collection(db, 'dissatisfactions'));
-//       const dissatisfactionData: any = dissatisfactionSnapshot.docs.map(doc => ({
-//         id: doc.id,
-//         ...doc.data(),
-//       }));
-//       setReasons(dissatisfactionData);
-//     } catch (error) {
-//       console.error('Error fetching dissatisfaction data:', error);
-//     }
-//   };
-
-//   // Call the function to fetch data when the component mounts
-//   fetchDissatisfactionData();
-// }, []);

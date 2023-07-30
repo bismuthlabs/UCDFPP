@@ -95,10 +95,9 @@ export default function Home() {
           <Voting />          
           {/* Form Form Form Form */}
           <div className='my-20'>
-            <div>
+            <div className='max-w-3xl'>
               <p>
-                Have you ever experienced a situation where you bought a cloth or a shoe and regretted buying it? <br />
-                Share you experience or write a reason why people go through that.
+                Have you encountered a situation where you made a clothing or shoe purchase and later felt dissatisfied with your decision? We welcome you to share your personal experiences or insights into the reasons why people face such situations.
               </p>
             </div>
             {/* Form */}
