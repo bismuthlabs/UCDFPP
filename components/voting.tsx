@@ -5,6 +5,7 @@ import { db } from '@/app/firebase/config';
 import { collection, getDocs, doc, updateDoc, getDoc } from 'firebase/firestore';
 
 interface Reason {
+  rank: number;
   id: string;
   reason: string;
   description: string;
