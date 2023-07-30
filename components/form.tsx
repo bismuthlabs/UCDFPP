@@ -19,7 +19,7 @@ export default function TextareaForm() {
 
     // Validation: Check if the name and message are not empty
     if (!message) {
-      alert("Please Fill in your message before submitting.");
+      alert("Write to us your experience, we promise not judge your grammer.");
       return;
     }
 
@@ -30,13 +30,13 @@ export default function TextareaForm() {
         message,
       });
 
-
       // Reset the form fields and set the submitted state to true
       setName('');
       setMessage('');
       setSubmitted(true);
 
       // Display a success toast
+      alert("Successfully sent. Please join our research team to stay updated. Thanks for your participation!")
     } catch (error) {
       console.error('Error submitting form:', error);
     }
@@ -50,7 +50,7 @@ export default function TextareaForm() {
             <div className="sm:col-span-4">
               <div className="mt-2">
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                  <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm text-sm">Optional/</span>
+                  <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm text-sm">Optional |</span>
                   <input
                     type="text"
                     name="username"
@@ -64,7 +64,7 @@ export default function TextareaForm() {
                 </div>
               </div>
             </div>
-            <div className="col-span-full">
+            <div className="col-span-full rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
               <div className="">
                 <textarea
                   id="message"

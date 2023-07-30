@@ -198,61 +198,73 @@ export default function Voting() {
         </div>
       ) : (
         reasons.map((reason) => (
-        <div className="flex items-center" key={reason.id}>
-          <p className='text-4xl'>
-            {/* {reason.id} */}
-            {reason.rank}
-          </p>
-          <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
-            <h2 className={`mb-3 text-base font-semibold`}>
-              {reason.reason}
-            </h2>
-            <p className={`m-0 max-w-[60ch] text-sm text-gray-600`}>
-              {reason.description}
+        <div className="flex items-center flex-col" key={reason.id}>
+          <div className='flex items-center'>
+            <p className='text-3xl'>
+              {reason.rank}
             </p>
-          </div>
-          <div className='flex gap-2 items-center'>
-            <div className="flex flex-col gap-1 items-center">
-            <button
-                className={`flex items-center gap-1 ${
-                  getUserVotes()[reason.id] === 'upvote' ? 'text-orange-500' : ''
-                }`}
-                onClick={() => handleUpvote(reason.id)}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill={getUserVotes()[reason.id] === 'upvote' ? 'currentColor' : 'none'}
-                  stroke={getUserVotes()[reason.id] === 'upvote' ? 'currentColor' : 'currentColor'}
-                >
-                  <path fill="currentColor" d="M12.781 2.375c-.381-.475-1.181-.475-1.562 0l-8 10A1.001 1.001 0 0 0 4 14h4v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7h4a1.001 1.001 0 0 0 .781-1.625l-8-10zM15 12h-1v8h-4v-8H6.081L12 4.601L17.919 12H15z"/></svg>
-              </button>
-              <button
-                className={`flex items-center gap-1 ${
-                  getUserVotes()[reason.id] === 'downvote' ? 'text-blue-500' : ''
-                }`}
-                onClick={() => handleDownvote(reason.id)}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill={getUserVotes()[reason.id] === 'downvote' ? 'currentColor' : 'none'}
-                  stroke={getUserVotes()[reason.id] === 'downvote' ? 'currentColor' : 'currentColor'}
-                >
-                  <path fill="currentColor" d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399L6.081 12H10V4h4v8h3.919L12 19.399z"/></svg>
-              </button>
+            <div className='flex flex-col justify-start'>
+              <div className="group rounded-lg border border-transparent px-5 py-2 my-2 transition-colors hover:border-gray-300">
+                <h2 className={`mb-3 text-base font-semibold`}>
+                  {reason.reason}
+                </h2>
+                <p className={`m-0 max-w-[75ch] text-sm text-gray-600`}>
+                  {reason.description}
+                </p>
+              </div>
+              <div className='ml-5'>
+            <div className='flex gap-2 items-center px-2 py-1 rounded-full bg-gray-200 w-min'>
+              <div className="flex gap-3 items-center">
+                <div className='flex items-center gap-1'>
+                  <p className={`text-sm ${getUserVotes()[reason.id] === 'upvote' ? 'text-orange-500' : ''}`}>
+                      {reason.votes.upvotes.count}
+                    </p>
+                  <button
+                      className={`flex items-center gap-1 ${
+                        getUserVotes()[reason.id] === 'upvote' ? 'text-orange-500' : ''
+                      }`}
+                      onClick={() => handleUpvote(reason.id)}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="21"
+                        height="21"
+                        viewBox="0 0 24 24"
+                        fill={getUserVotes()[reason.id] === 'upvote' ? 'currentColor' : 'none'}
+                        stroke={getUserVotes()[reason.id] === 'upvote' ? 'currentColor' : 'currentColor'}
+                      >
+                        <path fill="currentColor" d="M12.781 2.375c-.381-.475-1.181-.475-1.562 0l-8 10A1.001 1.001 0 0 0 4 14h4v7a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-7h4a1.001 1.001 0 0 0 .781-1.625l-8-10zM15 12h-1v8h-4v-8H6.081L12 4.601L17.919 12H15z"/></svg>
+                    </button>
+                </div>
+                <div className='flex items-center'>
+                  <button
+                    className={`flex items-center gap-1 ${
+                      getUserVotes()[reason.id] === 'downvote' ? 'text-blue-500' : ''
+                    }`}
+                    onClick={() => handleDownvote(reason.id)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      viewBox="0 0 24 24"
+                      fill={getUserVotes()[reason.id] === 'downvote' ? 'currentColor' : 'none'}
+                      stroke={getUserVotes()[reason.id] === 'downvote' ? 'currentColor' : 'currentColor'}
+                    >
+                      <path fill="currentColor" d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399L6.081 12H10V4h4v8h3.919L12 19.399z"/></svg>
+                  </button>
+                  <p className={`text-sm ${getUserVotes()[reason.id] === 'downvote' ? 'text-blue-500' : ''}`}>{reason.votes.downvotes.count}</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-1 items-center">
+
+              </div>
             </div>
-            <div className="flex flex-col gap-1 items-center">
-              <p className={`text-sm ${getUserVotes()[reason.id] === 'upvote' ? 'text-orange-500' : ''}`}>
-                {reason.votes.upvotes.count}
-              </p>
-              <p className={`text-sm ${getUserVotes()[reason.id] === 'downvote' ? 'text-blue-500' : ''}`}>{reason.votes.downvotes.count}</p>
+          </div>
+
             </div>
           </div>
+          
         </div>
         ))
       )}

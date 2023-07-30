@@ -28,7 +28,7 @@ export default function Home() {
         <Dialog>
       <DialogTrigger asChild>
         <Button variant={'link'} className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto underline lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-            About this project
+            About research
           </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
@@ -57,9 +57,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='absolute top-28 md:overflow-auto md:absolute p-4 lg:flex lg:justify-center lg:flex-col mb-32'>
+      <div className='absolute top-20 md:overflow-auto md:absolute p-4 lg:flex lg:justify-center lg:flex-col mb-32'>
         <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-          <h1 className='text-xl uppercase mb-4 font-bold'>Unlocking Shopping Secrets: Why Didn't You Love Your Recent Fashion Purchase?.</h1>
+          <h1 className='text-xl uppercase mb-4 font-bold'>Why did you regret buying a cloth or a shoe?</h1>
         </div>
         <p>
           Please upvote 
@@ -91,28 +91,30 @@ export default function Home() {
             each of the three reasons below
         </p>
 
-        <div className="mb-24 grid lg:mb-0 lg:text-left">
+        <div className="mb-24 flex items-start flex-col lg:mb-0 lg:text-left">
           <Voting />          
-          {/* Form Form Form Form */}
-          <div className='my-20'>
+
+          <div className='flex flex-col mt-20'>
+            <h2 className="text-base font-semibold leading-7 text-gray-900 uppercase">Shared Stories</h2>
+            {/* <p className="mt-1 text-sm leading-6 text-gray-600">People's experience, shared with us.</p> */}
+            <div className='p-3 rounded-md bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30'>
+              <Stories />
+            </div>
+          </div>
+          {/* ----------------- */}
+          <div className='my-16'>
             <div>
-              <p>
-                Have you encountered a situation where you made a clothing or shoe purchase and later felt dissatisfied with your decision? We welcome you to share your personal experiences or insights into the reasons why people face such situations.
+              <h2 className="text-base font-semibold leading-7 text-gray-900 uppercase">Share your experience</h2>
+              <p className='max-w-[75ch]'>
+                Have you ever regretted buying a cloth or shoe? Share your experience or you may share your own insights on why these situations happen.
               </p>
             </div>
             {/* Form */}
             <TextareaForm />
           </div>
-          <div className='flex flex-col mb-20'>
-            <h2 className="text-base font-semibold leading-7 text-gray-900 uppercase">Stories</h2>
-            <p className="mt-1 text-sm leading-6 text-gray-600">People's experience, shared with us.</p>
-            <div className='p-3 rounded-md bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30'>
-              <Stories />
-            </div>
-          </div>
           <div className='flex flex-col'>
             <h2 className="text-base font-semibold leading-7 text-gray-900 uppercase">Join Us</h2>
-            <p className="mt-1 text-sm leading-6 text-gray-600 max-w-3xl">We are innovative team solving problems, seeking collaborators, and <span className='text-orange-400'>offering up to 60% discounts on our groundbreaking product for all.</span></p>
+            <p className="mt-1 text-sm leading-6 text-gray-600 max-w-[75ch]">We are innovative team solving problems, seeking collaborators, and <span className='text-orange-400'>offering up to 60% discounts on our groundbreaking product for all.</span></p>
             <div className='p-3 mt-4 mb-32 rounded-md bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30'>
             <h2 className="text-base font-medium leading-7 text-gray-900">Ways to join</h2>
             <JoinUs />
