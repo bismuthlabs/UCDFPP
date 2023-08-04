@@ -57,11 +57,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='absolute top-20 md:overflow-auto md:absolute p-4 lg:flex lg:justify-center lg:flex-col mb-32'>
-        <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-          <h1 className='text-xl uppercase mb-4 font-bold'>Why did you regret buying a cloth or a shoe?</h1>
+      <div className='absolute top-20 md:overflow-auto md:absolute p-4 lg:flex items-center lg:justify-center lg:flex-col mb-32'>
+        <div className="relative flex place-items-center justify-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+          <h1 className='text-xl uppercase mb-6 font-bold text-center'>Why did you regret buying a cloth or a shoe?</h1>
         </div>
-        <p>
+        <p className='mb-12 bg-gray-200 p-3 rounded-full text-center'>
           Please upvote 
           <span>
             <svg

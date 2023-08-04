@@ -203,8 +203,8 @@ export default function Voting() {
             <p className='text-3xl'>
               {reason.rank}
             </p>
-            <div className='flex flex-col justify-start'>
-              <div className="group rounded-lg border border-transparent px-5 py-2 my-2 transition-colors hover:border-gray-300">
+            <div className='flex flex-col justify-start mb-8'>
+              <div className="group rounded-lg border border-transparent px-5 mb-3 transition-colors">
                 <h2 className={`mb-3 text-base font-semibold`}>
                   {reason.reason}
                 </h2>
