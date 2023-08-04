@@ -199,7 +199,7 @@ export default function Voting() {
       ) : (
         reasons.map((reason) => (
         <div className="flex items-center flex-col" key={reason.id}>
-          <div className='flex items-center'>
+          <div className='flex items-start justify-start'>
             <p className='text-3xl'>
               {reason.rank}
             </p>
@@ -257,11 +257,9 @@ export default function Voting() {
                 </div>
               </div>
               <div className="flex flex-col gap-1 items-center">
-
               </div>
             </div>
           </div>
-
             </div>
           </div>
           
